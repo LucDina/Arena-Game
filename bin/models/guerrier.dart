@@ -66,6 +66,8 @@ class Guerrier extends Personne {
   @override
   String toString() {
     return """
+          ------- STATUS -------
+
           Name : $name
           Arme : ${arme != null ? "${arme!.name} ${arme!.tag}" : "Na pas d'arme "}
           Combo Spécial : $comboName

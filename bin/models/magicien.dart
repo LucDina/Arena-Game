@@ -1,4 +1,4 @@
-// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: curly_braces_in_flow_control_structures, avoid_relative_lib_imports
 
 import 'dart:io';
 import 'dart:math';
@@ -51,6 +51,8 @@ class Magicien extends Personne {
   @override
   String toString() {
     return """
+          ------- STATUS -------
+
           Name : $name
           Mana : $mana
           Combo Spécial : $comboName

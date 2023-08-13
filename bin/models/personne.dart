@@ -56,6 +56,8 @@ class Personne {
   @override
   String toString() {
     return """
+          ------- STATUS -------
+
           Name : $name (${super.toString()})
           Health : ${health.toStringAsFixed(2)}
           Lost : ${!isNotDeath()}

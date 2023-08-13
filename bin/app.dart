@@ -1,15 +1,9 @@
-import 'dart:io';
-import 'dart:math';
-
 import 'models/arena.dart';
-import 'models/arme.dart';
-import 'models/guerrier.dart';
-import 'models/magicien.dart';
-import 'models/personne.dart';
 
 void main(List<String> args) {
+  // Initialisation de l'arène
   Arena arena = Arena();
-  // Arena fourni les joueur et les armes
-  Scene scene = Scene.manage(player: Arena.players, armo: Arena.armes_);
+  // on dispose les joueurs d'ont deux seront choisis ainsi des armes
+  Scene scene = Scene.manage(players: Arena.players, armo: Arena.armes_);
   arena.useScene(scene);
 }
