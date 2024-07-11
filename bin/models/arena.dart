@@ -11,7 +11,6 @@ class Arena {
   Arena();
 
   useScene(Scene scene) {
-    // use scene function
     // scene.playerHystory();
     scene.start();
   }
@@ -26,7 +25,12 @@ class Arena {
     sleep(Duration(seconds: 4));
   }
 
+  // Maintenir la probabilité d'acceptation au plus bas soit 1/4 et 1/2
+  /**
+  * Cette methode défine si un joueur doit bénéficier d'une grâce ou d'un boost ou nom
+  **/
   static destin() =>
+      
       (Random().nextBool() && Random().nextBool()) && Random().nextBool();
 }
 
@@ -40,7 +44,7 @@ class Scene {
       print("""Joueur ${i + 1}
         ${players[i]["description"]}
       """);
-      sleep(Duration(seconds: 10));
+      sleep(Duration(seconds: 15));
     }
   }
 
@@ -52,23 +56,25 @@ class Scene {
   start() {
     List duelPlayer = playerchoice(3, 2);
 
-    print("Figt ⚔");
+    print("Figth ⚔");
     print("${duelPlayer[0]}\n${duelPlayer[1]}");
-    if (duelPlayer.length >= 2) {
+    if (duelPlayer.length == 2) {
+      
+      // first move through through random decision
       Random(2).nextBool()
           ? duelPlayer[0].attack(duelPlayer[1])
           : duelPlayer[1].attack(duelPlayer[0]);
 
       // role attack
       int conteur = 0;
-      while (duelPlayer[0].isNotDeath() && duelPlayer[1].isNotDeath()) {
+      while (duelPlayer[0].isNotDead() && duelPlayer[1].isNotDead()) {
 
         if(conteur%5 == 0) print("${duelPlayer[0]}\n${duelPlayer[1]}");
 
         sleep(Duration(seconds: 1));
         duelPlayer[0].attack(duelPlayer[1]);
         sleep(Duration(seconds: 1));
-        if (duelPlayer[1].isNotDeath()) {
+        if (duelPlayer[1].isNotDead()) {
           duelPlayer[1].attack(duelPlayer[0]);
         }
         conteur++;

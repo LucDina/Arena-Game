@@ -45,7 +45,7 @@ class Personne {
     }
   }
 
-  bool isNotDeath() {
+  bool isNotDead() {
     if (health <= 0) {
       health = 0;
       return false;
@@ -60,7 +60,7 @@ class Personne {
 
           Name : $name (${super.toString()})
           Health : ${health.toStringAsFixed(2)}
-          Lost : ${!isNotDeath()}
+          Lost : ${!isNotDead()}
     """;
   }
 }

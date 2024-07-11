@@ -57,7 +57,7 @@ class Magicien extends Personne {
           Mana : $mana
           Combo Spécial : $comboName
           Health : ${health.toStringAsFixed(2)}
-          Lost : ${!isNotDeath()}
+          Lost : ${!isNotDead()}
     """;
   }
 }

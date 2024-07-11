@@ -72,7 +72,7 @@ class Guerrier extends Personne {
           Arme : ${arme != null ? "${arme!.name} ${arme!.tag}" : "Na pas d'arme "}
           Combo Spécial : $comboName
           Health : ${health.toStringAsFixed(2)}
-          Lost : ${!isNotDeath()}
+          Lost : ${!isNotDead()}
     """;
   }
 }
