@@ -20,7 +20,7 @@ class Arena {
   // PUBLIC FUNCTION
 
   /// Fornie des `informations` détaillées sur ce qui se passe sur `l'Arène`
-  static messagerSpeak(String message) {
+  static speaker(String message) {
     print(message);
     sleep(Duration(seconds: 4));
   }
@@ -37,7 +37,7 @@ class Arena {
 class Scene {
   List players;
   List armo;
-  Scene.manage({required this.players, required this.armo});
+  Scene.dispose({required this.players, required this.armo});
 
   playerHystory() {
     for (int i = 0; i < players.length; i++) {

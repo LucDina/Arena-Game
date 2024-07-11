@@ -39,7 +39,7 @@ class Personne {
     //les dégats augmente et tous les coups peuvent ne pas être enchainé
     while (Random().nextBool() && (chain >= 2 && chain <= 5)) {
       personne.getDamage((degat + (chain - 1)) / 3);
-      Arena.messagerSpeak(
+      Arena.speaker(
           "Mode furyyy.. 🔥 | enchainement * $chain déjà sur ${personne.name}  !!!");
       chain++;
     }

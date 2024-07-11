@@ -40,22 +40,22 @@ class Guerrier extends Personne {
       //    qui sont fini alors il s'en débarrasse
       //    il n'attaque pas (il perd son tour)
 
-      Arena.messagerSpeak("✨✨✨ Combo spécial de $arme");
+      Arena.speaker("✨✨✨ Combo spécial de $arme");
       if ((arme.runtimeType == ExtenssibleArme().runtimeType) &&
           arme!.unUseFull() && arme != null) {
         arme == null;
-        Arena.messagerSpeak("😥 $name jête son arme");
+        Arena.speaker("😥 $name jête son arme");
         return;
       }
       double degatValue = arme!.use().toDouble();
       personne.getDamage(degatValue);
-      Arena.messagerSpeak("${arme!.tag} $comboName sur ${personne.name} | degat $degatValue");
+      Arena.speaker("${arme!.tag} $comboName sur ${personne.name} | degat $degatValue");
     } else {
       if (Random().nextBool()) {
         // enchainer jusqu'a 02 coup d'arme portable
         for (int i = 0; i < Random().nextInt(2); i++) {
           personne.getDamage(armePortable.use().toDouble());
-          Arena.messagerSpeak(
+          Arena.speaker(
               " ${armePortable.tag} $name porte un coup de ${armePortable.name} sur ${personne.name}");
         }
       } else

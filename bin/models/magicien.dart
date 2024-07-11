@@ -24,7 +24,7 @@ class Magicien extends Personne {
       mana -= bouleDeMana;
 
       // inflige un dégat considérable de mana
-      Arena.messagerSpeak(
+      Arena.speaker(
           "$tag $name viens d'utiliser $comboName | degat : $bouleDeMana sur ${personne.name}");
       personne.getDamage(bouleDeMana.toDouble());
     } else {
@@ -39,8 +39,8 @@ class Magicien extends Personne {
         mana += manaCharge;
         health +=  healthCharge;
 
-        Arena.messagerSpeak("🌀🌠Charge de mana ---> $manaCharge");
-        Arena.messagerSpeak(
+        Arena.speaker("🌀🌠Charge de mana ---> $manaCharge");
+        Arena.speaker(
             "🍖🥩 Augmentation du niveau de vie de $healthCharge");
         sleep(Duration(seconds: manaCharge));
         if (mana < 0) mana = 0;
